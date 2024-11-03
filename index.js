@@ -568,7 +568,7 @@ router.get('/', async ctx => {
   await sendfile(ctx, agent.includes('Kobo') || agent.includes('Kindle') || agent.toLowerCase().includes('tolino') || agent.includes('eReader') /*"eReader" is on Tolino*/ ? 'static/download.html' : 'static/upload.html')
 })
 
-router.get('/Books/:filename', downloadFile)
+router.get('/:filename', downloadFile)
 
 app.use(serve("static"))
 
